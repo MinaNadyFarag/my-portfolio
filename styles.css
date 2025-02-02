@@ -225,7 +225,7 @@ body.light-mode {
 }
 
 body.light-mode #hero {
-  color: #333; /* Dark text for hero section */
+  color: #ffffff; /* Dark text for hero section */
 }
 
 body.light-mode #about,
