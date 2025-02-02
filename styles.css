@@ -220,7 +220,7 @@ footer {
 
 /* Light mode styles */
 body.light-mode {
-  background: #f4f4f4; /* Light background */
+  background: #000000; /* Light background */
   color: #333; /* Dark text */
 }
 
