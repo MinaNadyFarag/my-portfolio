@@ -302,23 +302,23 @@ body.light-mode .btn:hover {
   width: 50%;
   height: 60%;
   object-fit: cover;
-  z-index: 10;
+  z-index: -1;
 }
 
 /* تعديل الحجم والمكان للأجهزة الأصغر */
 @media (max-width: 768px) { /* التابلت والموبايل */
   #video-background {
-    width: 40%;  /* زيادة الحجم قليلاً عشان يكون واضح */
-    height: 50%; /* ضبط الارتفاع */
+    width: 30%;  /* زيادة الحجم قليلاً عشان يكون واضح */
+    height: 40%; /* ضبط الارتفاع */
   }
 }
 
 @media (max-width: 480px) { /* الشاشات الصغيرة جدًا (الموبايل) */
   #video-background {
     width:30%;  
-    height: 40%; 
+    height: 50%; 
      /* left: 50%;  */
-    /* transform: translateX(-50%);  */
+    transform: translateX(-50%); 
   }
 }
 
