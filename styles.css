@@ -302,7 +302,7 @@ body.light-mode .btn:hover {
   width: 50%;
   height: 60%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 10;
 }
 
 /* تعديل الحجم والمكان للأجهزة الأصغر */
@@ -315,9 +315,9 @@ body.light-mode .btn:hover {
 
 @media (max-width: 480px) { /* الشاشات الصغيرة جدًا (الموبايل) */
   #video-background {
-    width:30%;  
-    height: 50%; 
-     left: 50%; 
+    width:50%;  
+    height: 60%; 
+     left: 30%;
     /* transform: translateX(-50%);  */
   }
 }
