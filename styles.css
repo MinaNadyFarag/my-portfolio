@@ -280,7 +280,7 @@ body.light-mode .btn:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 10;
 }
 
 /* Video Background */
@@ -308,8 +308,8 @@ body.light-mode .btn:hover {
 /* تعديل الحجم والمكان للأجهزة الأصغر */
 @media (max-width: 768px) { /* التابلت والموبايل */
   #video-background {
-    width: 30%;  /* زيادة الحجم قليلاً عشان يكون واضح */
-    height: 40%; /* ضبط الارتفاع */
+    width: 30%;  
+    height: 40%;
   }
 }
 
@@ -317,7 +317,7 @@ body.light-mode .btn:hover {
   #video-background {
     width:30%;  
     height: 50%; 
-     /* left: 50%;  */
+     left: 50%; 
     /* transform: translateX(-50%);  */
   }
 }
