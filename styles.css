@@ -294,15 +294,34 @@ body.light-mode .btn:hover {
   z-index: -1; 
 } */
 /* Video Background */
+/* Video Background */
 #video-background {
   position: fixed;
-  bottom: 0;  /* تثبيت الفيديو في الأسفل */
-  left: 0;    /* تثبيت الفيديو في اليسار */
-  width: 50%; /* تصغير العرض */
-  height: 60%; /* تصغير الارتفاع */
-  object-fit: cover; /* يضمن أن الفيديو يغطي المساحة المحددة بدون تشويه */
-  z-index: -1; /* تأكد أن الفيديو لا يختفي خلف العناصر الأخرى */
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  object-fit: cover;
+  z-index: 10;
 }
+
+/* تعديل الحجم والمكان للأجهزة الأصغر */
+@media (max-width: 768px) { /* التابلت والموبايل */
+  #video-background {
+    width: 50%;  /* زيادة الحجم قليلاً عشان يكون واضح */
+    height: 25%; /* ضبط الارتفاع */
+  }
+}
+
+@media (max-width: 480px) { /* الشاشات الصغيرة جدًا (الموبايل) */
+  #video-background {
+    width: 70%;  /* تكبير العرض */
+    height: 30%; /* تكبير الارتفاع */
+    left: 50%; /* تحريكه للمنتصف شوية */
+    transform: translateX(-50%); /* محاذاته بالمنتصف */
+  }
+}
+
 
 
 /* Download CV Button */
