@@ -302,23 +302,31 @@ body.light-mode .btn:hover {
   width: 50%;
   height: 60%;
   object-fit: cover;
-  z-index: 10;
+  z-index: -1;
 }
 
 /* تعديل الحجم والمكان للأجهزة الأصغر */
 @media (max-width: 768px) { /* التابلت والموبايل */
   #video-background {
-    width: 50%;  /* زيادة الحجم قليلاً عشان يكون واضح */
-    height: 25%; /* ضبط الارتفاع */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 50%;
+    object-fit: cover;
+    z-index: -1;
   }
 }
 
 @media (max-width: 480px) { /* الشاشات الصغيرة جدًا (الموبايل) */
   #video-background {
-    width: 70%;  /* تكبير العرض */
-    height: 30%; /* تكبير الارتفاع */
-    left: 50%; /* تحريكه للمنتصف شوية */
-    transform: translateX(-50%); /* محاذاته بالمنتصف */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 50%;
+    object-fit: cover;
+    z-index: -1;
   }
 }
 
