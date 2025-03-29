@@ -146,21 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateButtonIcon();
   }
 
-  // Toggle theme on button click
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-    localStorage.setItem("theme", body.classList.contains("light-mode") ? "light-mode" : "");
-    updateButtonIcon();
-  });
-
-  // Update button icon based on theme
-  function updateButtonIcon() {
-    if (body.classList.contains("light-mode")) {
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for light mode
-    } else {
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for dark mode
-    }
-  }
+ 
 });
 
 particlesJS.load("particles-js", "particles.json", function () {
@@ -168,3 +154,37 @@ particlesJS.load("particles-js", "particles.json", function () {
 });
 
 // ------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const certificatesContainer = document.querySelector(".certificates-slider");
+  const certificates = document.querySelectorAll(".certificate");
+
+  let certWidth = certificates[0].offsetWidth; // عرض كل شهادة
+  let gap = 20; // المسافة بين الشهادات
+  let visibleCerts = 4; // عدد الشهادات المعروضة في كل مرة
+  let moveDistance = (certWidth + gap) * visibleCerts; // المسافة التي سيتحركها العنصر
+
+  let animationSpeed = 5; // سرعة التحريك (كلما زاد الرقم كانت الحركة أبطأ)
+  
+  function startAnimation() {
+      gsap.to(certificatesContainer, {
+          x: -moveDistance,
+          duration: animationSpeed,
+          ease: "linear",
+          onComplete: function () {
+              gsap.set(certificatesContainer, { x: 0 }); // إعادة الشهادات للبداية
+              startAnimation(); // إعادة الحركة
+          }
+      });
+  }
+
+  gsap.set(certificatesContainer, { x: 0 }); // تأكد من أن الشهادات تبدأ من الأول
+  startAnimation();
+});
+
+// ----------------------------------------------------------------------------
+document.querySelectorAll('.certificate').forEach(cert => {
+  cert.addEventListener('click', () => {
+    const link = cert.getAttribute('data-link');
+    window.open(link, '_blank');
+  });
+});

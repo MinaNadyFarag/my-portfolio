@@ -98,6 +98,34 @@
       </div>
     </div>
   </section>
+<!-- Certificates Section -->
+<section id="certificates" class="fade-in">
+  <h2>Certificates</h2>
+  <div class="certificates-container">
+    <div class="certificates-slider">
+      <div class="certificate" data-link="https://www.life-global.org/certificate/d8a7e272-2d8e-4dd1-8334-a1b50cbf6b95">
+        <img src="./images/data science and analytics hp life.jpg" alt="Certificate 1">
+        <p>Data Science - HP</p>
+        <div class="overlay">Open in Browser</div>
+      </div>
+      <div class="certificate" data-link="https://www.life-global.org/certificate/e7a140bc-49b5-4869-a3ed-b56d26ef9229">
+        <img src="./images/hp Ai for beginners.jpg" alt="Certificate 3">
+        <p>AI - HP</p>
+        <div class="overlay">Open in Browser</div>
+      </div>
+      <div class="certificate" data-link="https://www.life-global.org/certificate/449dabb2-7ee0-487e-89a2-3c9c4816a0c8">
+        <img src="./images/hp intro to cybersecurity.jpg" alt="Certificate 4">
+        <p>Cybersecurity - HP</p>
+        <div class="overlay">Open in Browser</div>
+      </div>
+      <div class="certificate" data-link="https://www.datacamp.com/certificate/AEDS0019921135984">
+        <img src="./images/DataCamp AI Engineer for Data ScientstsCertificate.png" alt="Certificate 2">
+        <p>AI Engineer - DataCamp</p>
+        <div class="overlay">Open in Browser</div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Testimonials -->
     <section id="testimonials" class="fade-in">
@@ -226,6 +254,33 @@
         }
 
 </style>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // التحقق من الثيم المخزن مسبقًا
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // أيقونة القمر للوضع الداكن
+    }
+
+    themeToggle.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // حفظ التفضيل في Local Storage
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            localStorage.setItem("theme", "dark");
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    });
+});
+
+</script>
 </body>
 </html>
-
